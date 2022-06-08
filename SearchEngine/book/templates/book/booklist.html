@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Books</title>
+        <link rel="stylesheet" href="{% static 'booklist.css' %}">
+    </header>
+    <body>
+        <h2>Book List</h2>
+        <div class="search-box">
+            <input type="text" name="" id="searchField" placeholder="Search">
+        </div>
+        <div class="table-header">
+            <div class="col-1">Title</div>
+            <div class="col-2">Author</div>
+            <div class="col-3">Pages</div>
+        </div>
+        {% for book in books %}
+        <div class="table-row">
+            <div class="col-1">{{book.title}}</div>
+            <div class="col-2">{{book.author}}</div>
+            <div class="col-3">{{book.page}}</div>
+        </div>
+        {% endfor %}
+
+        <script src="{% static 'booklist.js' %}"></script>
+    </body>
+</html>
